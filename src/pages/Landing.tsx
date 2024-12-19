@@ -7,7 +7,7 @@ const Landing = () => {
 
   return (
     <div>
-      Hello, {user?.toString()}
+      Hello, {user?.name}
 
       <button onClick={logout}>Logout</button>
     </div>
