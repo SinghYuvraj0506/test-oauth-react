@@ -1,12 +1,16 @@
 import { useAuth } from 'oauth-wrapper-lib/react';
 
 const Landing = () => {
-    const { isAuthenticated, user } = useAuth();
+    const { isAuthenticated, user, logout } = useAuth();
 
-    console.log("data",isAuthenticated, user)
+    console.log("data of user is",isAuthenticated, user)
 
   return (
-    <div>Landing page</div>
+    <div>
+      Hello, {user?.toString()}
+
+      <button onClick={logout}>Logout</button>
+    </div>
   )
 }
 
