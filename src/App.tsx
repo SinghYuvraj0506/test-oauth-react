@@ -1,4 +1,4 @@
-import { GoogleProvider } from "oauth-wrapper-lib/providers";
+import { Auth0Provider, GoogleProvider } from "oauth-wrapper-lib/providers";
 import "./App.css";
 import OAuthClient from "oauth-wrapper-lib";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -7,10 +7,10 @@ import Login from "./pages/Login";
 import Landing from "./pages/Landing";
 
 function App() {
-  const google = new GoogleProvider({
-    client_id: import.meta.env.VITE_GOOGLE_ID,
+  const google = new Auth0Provider({
+    client_id: import.meta.env.VITE_AUTH_ID,
     handleCallback: () => {},
-  });
+  },import.meta.env.VITE_AUTH0_DOMAIN);
 
   const client = new OAuthClient({
     providers: [google],

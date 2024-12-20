@@ -10,10 +10,10 @@ const Login = () => {
       Login
       <button
         onClick={() => {
-          loginFn("google");
+          loginFn("auth0");
         }}
       >
-        Login Now with google
+        Login Now with Auth0
       </button>
     </div>
   );
